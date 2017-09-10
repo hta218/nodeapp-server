@@ -21,13 +21,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  // res.render('maintenence.hbs');
-  next();
-});
-
 app.use(express.static(__dirname + '/public')); //anyone can read //register middleware
-
 
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
@@ -50,9 +44,10 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/bad', (req, res) => {
+app.get('/demo', (req, res) => {
   res.send({
-    errorMessage: 'Unable to load data'
+    name: 'Tuan Anh',
+    age: 22
   });
 });
 
